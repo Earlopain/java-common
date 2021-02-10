@@ -41,4 +41,8 @@ public class Assert {
 	public static void isNull(Object o) {
 		isNull(o, "Passed object was expected to be null");
 	}
+
+	public static void notReached() {
+		throw new AssertionError();
+	}
 }
