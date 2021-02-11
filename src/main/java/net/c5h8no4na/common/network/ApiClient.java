@@ -10,8 +10,10 @@ public abstract class ApiClient<T> {
 	protected HttpClient client;
 
 	public ApiClient() {
-		this.client = HttpClient.newHttpClient();
+		client = getHttpClient();
 	}
+
+	protected abstract HttpClient getHttpClient();
 
 	protected abstract Builder getBuilderBase();
 
