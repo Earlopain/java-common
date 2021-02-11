@@ -3,7 +3,7 @@ package net.c5h8no4na.common.assertion;
 public class Assert {
 
 	public static void isTrue(Boolean value, String message) {
-		if (value != true) {
+		if (!Boolean.TRUE.equals(value)) {
 			throw new AssertionError(message);
 		}
 	}
@@ -13,7 +13,7 @@ public class Assert {
 	}
 
 	public static void isFalse(Boolean value, String message) {
-		if (value != false) {
+		if (!Boolean.FALSE.equals(value)) {
 			throw new AssertionError(message);
 		}
 	}
