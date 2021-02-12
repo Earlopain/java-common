@@ -16,7 +16,7 @@ public abstract class ApiClient<T> {
 
 	protected abstract Builder getBuilderBase();
 
-	public abstract <U> NetworkRequest<T> get(String url);
+	protected abstract <U> NetworkRequest<T> get(String url);
 
 	public static String basicAuth(String username, String password) {
 		return "Basic " + Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
