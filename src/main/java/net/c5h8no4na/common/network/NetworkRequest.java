@@ -14,11 +14,11 @@ public abstract class NetworkRequest<T> {
 		return data;
 	}
 
-	public Boolean responseCodeOk() {
+	public boolean responseCodeOk() {
 		return responseCode >= 200 && responseCode < 300;
 	}
 
-	public abstract Boolean isSuccess();
+	public abstract boolean isSuccess();
 
 	public abstract String getErrorMessage();
 }

@@ -5,7 +5,7 @@ import net.c5h8no4na.common.assertion.Assert;
 
 @Data
 public class ApiResponse<T> {
-	private Boolean success;
+	private boolean success;
 	private String errorMessage;
 	private ErrorType errorType;
 	private Integer responseCode;

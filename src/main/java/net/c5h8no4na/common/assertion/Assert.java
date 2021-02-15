@@ -2,6 +2,8 @@ package net.c5h8no4na.common.assertion;
 
 public class Assert {
 
+	private Assert() {}
+
 	public static void isTrue(Boolean value, String message) {
 		if (!Boolean.TRUE.equals(value)) {
 			throw new AssertionError(message);

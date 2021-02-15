@@ -8,7 +8,7 @@ public abstract class ApiClient<T> {
 
 	protected HttpClient client;
 
-	public ApiClient() {
+	protected ApiClient() {
 		client = getHttpClient();
 	}
 
