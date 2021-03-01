@@ -7,6 +7,7 @@ import java.net.http.HttpClient.Redirect;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.util.Base64;
 
 public class NetworkUtils {
 
@@ -27,6 +28,10 @@ public class NetworkUtils {
 
 	public static String getCurrentIp() {
 		return makeSimpleRequest("https://ipinfo.io/ip");
+	}
+
+	public static String basicAuth(String username, String password) {
+		return "Basic " + Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
 	}
 
 }
