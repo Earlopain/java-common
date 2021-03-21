@@ -15,18 +15,13 @@ public class NetworkUtils {
 
 	private NetworkUtils() {}
 
-	public static String makeSimpleRequest(String url) {
+	public static String makeSimpleRequest(String url) throws IOException, InterruptedException {
 		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).build();
-		try {
-			HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-			return response.body();
-
-		} catch (IOException | InterruptedException e) {
-			return null;
-		}
+		HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+		return response.body();
 	}
 
-	public static String getCurrentIp() {
+	public static String getCurrentIp() throws IOException, InterruptedException {
 		return makeSimpleRequest("https://ipinfo.io/ip");
 	}
 
